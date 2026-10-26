@@ -1978,6 +1978,14 @@ msgid "Configuration"
 msgstr ""
 
 #. module: l10n_br_fiscal
+#. odoo-python
+#: code:addons/l10n_br_fiscal/models/document.py:0
+msgid ""
+"Configure the serie %(serie)s of %(document_type)s for %(company)s before "
+"importing the documents it issued."
+msgstr ""
+
+#. module: l10n_br_fiscal
 #: model_terms:ir.ui.view,arch_db:l10n_br_fiscal.document_form
 msgid "Confirm"
 msgstr ""
@@ -2907,6 +2915,12 @@ msgstr ""
 msgid ""
 "Extends Odoo to helps you manage your brazilian fiscal documents, taxes and "
 "etc..."
+msgstr ""
+
+#. module: l10n_br_fiscal
+#. odoo-python
+#: code:addons/l10n_br_fiscal/models/icms_regulation.py:0
+msgid "External"
 msgstr ""
 
 #. module: l10n_br_fiscal
@@ -5427,6 +5441,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_br_fiscal.field_l10n_br_fiscal_document_line_mixin__insurance_value
 #: model:ir.model.fields,field_description:l10n_br_fiscal.field_l10n_br_fiscal_document_mixin__amount_insurance_value
 msgid "Insurance Value"
+msgstr ""
+
+#. module: l10n_br_fiscal
+#. odoo-python
+#: code:addons/l10n_br_fiscal/models/icms_regulation.py:0
+msgid "Internal"
 msgstr ""
 
 #. module: l10n_br_fiscal
@@ -8229,6 +8249,8 @@ msgid "Tax Base Type"
 msgstr ""
 
 #. module: l10n_br_fiscal
+#. odoo-python
+#: code:addons/l10n_br_fiscal/models/icms_regulation.py:0
 #: model:ir.model.fields,field_description:l10n_br_fiscal.field_l10n_br_fiscal_document_line__icms_tax_benefit_id
 #: model:ir.model.fields,field_description:l10n_br_fiscal.field_l10n_br_fiscal_document_line_mixin__icms_tax_benefit_id
 #: model_terms:ir.ui.view,arch_db:l10n_br_fiscal.tax_definition_form
