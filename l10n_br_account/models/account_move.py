@@ -31,6 +31,7 @@ class AccountMove(models.Model):
     _inherit = [
         _name,
         "l10n_br_account.decorator.mixin",
+        "l10n_br_fiscal.report.filter.mixin",
     ]
 
     # an account.move has normally 0 or 1 related fiscal document:
@@ -204,6 +205,15 @@ class AccountMove(models.Model):
     @api.model
     def _get_fiscal_lines_field_name(self):
         return "invoice_line_ids"
+
+    def _get_report_fiscal_totals(self):
+        # _inherits brings the fields of the fiscal document, not its methods
+        self.ensure_one()
+        return (
+            self.fiscal_document_id._get_report_fiscal_totals()
+            if self.fiscal_document_id
+            else False
+        )
 
     @api.onchange("ind_final")
     def _onchange_ind_final(self):
@@ -438,7 +448,7 @@ class AccountMove(models.Model):
                         values = {
                             "balance": term.get("company_amount"),
                             "amount_currency": term.get("foreign_amount"),
-                            "discount_amount_currency": term.get(
+                            "discount_amount_currency": invoice_payment_terms.get(
                                 "discount_amount_currency"
                             )
                             or 0.0,
